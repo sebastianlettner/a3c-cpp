@@ -1,0 +1,9 @@
+{
+  "worker": [
+    "localhost:3433",
+    "localhost:3434"
+  ],
+  "session_manager": [
+    "localhost:3435"
+  ]
+}
