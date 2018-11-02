@@ -1,0 +1,10 @@
+// Example for testing
+
+namespace serialization_test;
+
+table Structure {
+    x:int;
+    y:float;
+    z:[float];
+}
+root_type Structure;

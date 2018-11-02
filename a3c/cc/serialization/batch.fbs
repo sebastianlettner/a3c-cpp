@@ -1,0 +1,14 @@
+// Schema file for the serialization of an batch which is send to python. 
+// Needs to be filled out 
+// Installing the compiler https://rwinslow.com/posts/how-to-install-flatbuffers/
+
+namespace batch
+
+table Batch {
+
+    cum_reward:float; // for the session manager. 
+    episode_time:string; // for the session manager. 
+    episode_length:int; // for the session manager.
+
+}
+root_type Batch;

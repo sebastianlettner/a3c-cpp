@@ -34,27 +34,41 @@ new_http_archive(
     strip_prefix = "googletest-release-1.7.0",
 )
 
-# new_http_archive(
-#     name="libzmq",
-#     url="https://github.com/zeromq/libzmq/archive/master.zip",
-#     build_file="libzmq.BUILD",
-#     sha256="a39f72e9a1f359562d7054bded2b6564dd886f9e58758b2d3d19f9f59f014124",
-#     strip_prefix="libzmq-master"
-#)
-
-new_local_repository(
+new_http_archive(
     name="libzmq",
-    path="/usr/local/include/libzmq",
-    build_file="libzmq.BUILD"
+    url="https://github.com/zeromq/libzmq/archive/master.zip",
+    build_file="libzmq.BUILD",
+    sha256="a39f72e9a1f359562d7054bded2b6564dd886f9e58758b2d3d19f9f59f014124",
+    strip_prefix="libzmq-master"
 )
 
-# new_http_archive(
-#     name="zeromq",
-#     url="https://github.com/zeromq/cppzmq/archive/master.zip",
-#     build_file="zeromq.BUILD",
-#     sha256="9ca9f943246e362c3bc990f24890ad57a00a499b31d5c781526c5cf8dde6bcb6",
-#     strip_prefix="cppzmq-master"
-# )
+new_local_repository(
+    name="platform",
+    path="external",
+    build_file="platform.BUILD"
+)
+
+new_local_repository(
+    name="cppzmq",
+    path="external",
+    build_file="cppzmq.BUILD"
+)
+
+new_http_archive(
+    name="simpleini",
+    url="https://github.com/brofield/simpleini/archive/master.zip",
+    strip_prefix="simpleini-master",
+    build_file="simpleini.BUILD",
+    sha256="2beef378c515613da77373d3c0fb876336cd85fe9d108ee7e0f71e8b94ff202f"
+)
+
+http_archive(
+    name="flatbuffers",
+    url="https://github.com/google/flatbuffers/archive/master.zip",
+    strip_prefix="flatbuffers-master",
+    # sha256="4a090d5003228a41fd3e77075860efbc69415d88e9217da4095d7d0bd6335cc8"
+)
+
 
 # Please add all new TensorFlow Serving dependencies in workspace.bzl.
 load("//a3c:workspace.bzl", "a3c_workspace")

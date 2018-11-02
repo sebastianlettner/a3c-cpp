@@ -26,6 +26,7 @@ class SessionManager(Process):
         super(SessionManager, self).__init__()
         self.start_time = 0  # will be set when the process starts.
 
+        self.config_file_dir = config_file_dir
         self.path_to_config_file = config_file_dir + '/session_manager.ini'
         self.session_config = configparser.ConfigParser()
         self.session_config.read(self.path_to_config_file)
@@ -208,7 +209,7 @@ class SessionManager(Process):
         """
         sys.stdout.write(msg + '\n')
         sys.stdout.flush()
-
+        
     def run(self):
 
         """

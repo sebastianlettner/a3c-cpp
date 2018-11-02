@@ -12,3 +12,4 @@ TEST(Predictor, TestConfig) {
     std::cout << address << std::endl;
     //ASSERT_EQ(address, "tcp://127.0.0.1:3335"); Comparison does not work somehow.
 }
+

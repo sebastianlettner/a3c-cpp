@@ -1,0 +1,12 @@
+// Schema file for the serialization of the graph output. 
+// Needs to be filled out 
+// Installing the compiler https://rwinslow.com/posts/how-to-install-flatbuffers/
+
+namespace g_out;
+
+table GraphOutput {
+
+    action:[int];
+
+}
+root_type GraphOutput;

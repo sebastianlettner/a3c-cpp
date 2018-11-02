@@ -5,6 +5,16 @@ cc_test(
     deps=[
         ":predictor",
         "@gtest//:main",
+        "@simple-ini//:main"
+    ]
+)
+
+cc_library(
+    name="cluster-node",
+    hdrs=["cluster_node.h"],
+    srcs=["cluster_node.cc"],
+    deps=[
+        "@org_tensorflow//tensorflow/core/distributed_runtime/rpc:grpc_runtime"
     ]
 )
 
@@ -13,7 +23,11 @@ cc_library(
     srcs = ["predictor.cc"],
     hdrs = ["predictor.h"],
     deps = [
-        "//a3c/cc/parser:simple_ini",
-        "@libzmq//:zmq-cpp",
+        "@cppzmq//:main",
+        "@simpleini//:main",
+        "@flatbuffers//:flatbuffers",
+        "//a3c/cc/serialization:graph-out",
+        "//a3c/cc/helper:zhelper",
+        "//a3c/cc/serialization:serializer"
     ]
 )

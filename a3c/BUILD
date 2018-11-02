@@ -1,5 +1,3 @@
-# Description: Tensorflow Serving.
-
 package(
     default_visibility = ["//a3c:internal"],
 )

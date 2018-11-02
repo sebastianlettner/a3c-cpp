@@ -13,7 +13,6 @@ cc_library(
     srcs = glob([
         "src/*.cpp",
         "src/*.c"
-
     ]),
     hdrs = glob(
         [
@@ -22,21 +21,13 @@ cc_library(
         ],
         exclude=[
             "src/tweetnacl.h",
-            "src/zmq_draft.h"
+            "src/zmq_draft.h",
         ]
     ),
     deps=[
         "zmq-draft",
-        "tweet-nacl"
-    ],
-    visibility = ["//visibility:public"],
-)
-
-cc_library(
-    name="zmq-cpp",
-    hdrs=["zmq.hpp"],
-    deps=[
-        ":main"
+        "tweet-nacl",
+        "@platform//:main"
     ],
     visibility = ["//visibility:public"],
 )

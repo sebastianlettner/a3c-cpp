@@ -1,0 +1,14 @@
+// Serialization 
+
+namespace fbs;
+
+table Dict {
+    entries:[Entry];
+    num:int;
+}
+
+table Entry {
+    key:string (key);
+    value:[float];
+}
+root_type Dict;

@@ -28,7 +28,6 @@ build --spawn_strategy=standalone
 build --genrule_strategy=standalone
 
 build --define=grpc_no_ares=true
-
 build -c opt
 
 # Adding --cxxopt=-D_GLIBCXX_USE_CXX11_ABI=0" creates parity with TF
